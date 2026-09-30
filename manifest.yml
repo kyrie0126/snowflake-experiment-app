@@ -1,0 +1,43 @@
+manifest_version: 2
+
+type: DCM_PROJECT
+
+default_target: DEV
+
+targets:
+  DEV:
+    account_identifier: DGGGORW-ISB25540
+    project_name: dev_experiment_app.admin.experiment_app_dcm
+    project_owner: dev_dcm_experiment_app
+    templating_config: DEV_TEMPLATING
+  TEST:
+    account_identifier: DGGGORW-ISB25540
+    project_name: test_experiment_app.admin.experiment_app_dcm
+    project_owner: test_dcm_experiment_app
+    templating_config: TEST_TEMPLATING
+  PROD:
+    account_identifier: DGGGORW-ISB25540
+    project_name: prod_experiment_app.admin.experiment_app_dcm
+    project_owner: prod_dcm_experiment_app
+    templating_config: PROD_TEMPLATING
+
+templating:
+  configurations:
+    DEV_TEMPLATING:
+      database: dev_experiment_app
+      schema_app: app
+      schema_data: data
+      schema_pipeline: pipeline
+      schema_analytics: analytics
+    TEST_TEMPLATING:
+      database: test_experiment_app
+      schema_app: app
+      schema_data: data
+      schema_pipeline: pipeline
+      schema_analytics: analytics
+    PROD_TEMPLATING:
+      database: prod_experiment_app
+      schema_app: app
+      schema_data: data
+      schema_pipeline: pipeline
+      schema_analytics: analytics
