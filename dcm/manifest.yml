@@ -1,0 +1,78 @@
+manifest_version: 2
+
+type: DCM_PROJECT
+
+default_target: DEV
+
+targets:
+  DEV:
+    account_identifier: DGGGORW-ISB25540
+    project_name: dev_experiment_app.admin.experiment_app_dcm
+    project_owner: dev_dcm_experiment_app
+    templating_config: DEV_TEMPLATING
+  TEST:
+    account_identifier: DGGGORW-ISB25540
+    project_name: test_experiment_app.admin.experiment_app_dcm
+    project_owner: test_dcm_experiment_app
+    templating_config: TEST_TEMPLATING
+  PROD:
+    account_identifier: DGGGORW-ISB25540
+    project_name: prod_experiment_app.admin.experiment_app_dcm
+    project_owner: prod_dcm_experiment_app
+    templating_config: PROD_TEMPLATING
+
+templating:
+  configurations:
+    DEV_TEMPLATING:
+      env: dev
+      warehouse: dev_wh_xs
+      admin:
+        namespace: dev_experiment_app.admin
+      analytics:
+        namespace: dev_experiment_app.analytics
+      app:
+        namespace: dev_experiment_app.app
+      data:
+        namespace: dev_experiment_app.data
+      pipeline:
+        namespace: dev_experiment_app.pipeline
+        dynamic_table:
+          src_lag: downstream
+          trf_lag: downstream
+          out_lag: 30 days
+          
+    TEST_TEMPLATING:
+      env: test
+      warehouse: test_wh_xs
+      admin:
+        namespace: test_experiment_app.admin
+      analytics:
+        namespace: test_experiment_app.analytics
+      app:
+        namespace: test_experiment_app.app
+      data:
+        namespace: test_experiment_app.data
+      pipeline:
+        namespace: test_experiment_app.pipeline
+        dynamic_table:
+          src_lag: downstream
+          trf_lag: downstream
+          out_lag: 7 days
+
+    PROD_TEMPLATING:
+      env: prod
+      warehouse: prod_wh_xs
+      admin:
+        namespace: prod_experiment_app.admin
+      analytics:
+        namespace: prod_experiment_app.analytics
+      app:
+        namespace: prod_experiment_app.app
+      data:
+        namespace: prod_experiment_app.data
+      pipeline:
+        namespace: prod_experiment_app.pipeline
+        dynamic_table:
+          src_lag: downstream
+          trf_lag: downstream
+          out_lag: 1 day
