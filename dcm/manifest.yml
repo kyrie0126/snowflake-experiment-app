@@ -34,6 +34,8 @@ templating:
         namespace: dev_experiment_app.app
       data:
         namespace: dev_experiment_app.data
+        dynamic_table:
+          lag: 30 days
       pipeline:
         namespace: dev_experiment_app.pipeline
         dynamic_table:
@@ -52,6 +54,8 @@ templating:
         namespace: test_experiment_app.app
       data:
         namespace: test_experiment_app.data
+        dynamic_table:
+          lag: 7 days
       pipeline:
         namespace: test_experiment_app.pipeline
         dynamic_table:
@@ -70,6 +74,8 @@ templating:
         namespace: prod_experiment_app.app
       data:
         namespace: prod_experiment_app.data
+        dynamic_table:
+          lag: 1 day
       pipeline:
         namespace: prod_experiment_app.pipeline
         dynamic_table:
