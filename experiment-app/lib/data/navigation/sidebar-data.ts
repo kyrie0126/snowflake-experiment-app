@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { querySnowflake} from "@/lib/snowflake";
 
-export async function GET() {
+export async function getCurrentUser() {
 
     try {
         const result = await querySnowflake("select current_user() as user_name, current_database() as database_name");

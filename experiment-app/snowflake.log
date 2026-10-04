@@ -24,3 +24,14 @@
 {"level":"INFO","message":"[11:03:28.550 AM]: Easy Logging is disabled as no config has been found"}
 {"level":"INFO","message":"[11:03:28.550 AM]: Connection[id: a4afa2f2-7643-4c29-848e-4a87b75f48d3] - authentication successful using: SNOWFLAKE"}
 {"level":"INFO","message":"[11:03:30.438 AM]: Connection[id: a4afa2f2-7643-4c29-848e-4a87b75f48d3] - connection established successfully after 1904.55 milliseconds"}
+{"level":"INFO","message":"[1:51:03.485 PM]: Creating new connection object"}
+{"level":"INFO","message":"[1:51:03.497 PM]: Creating Connection[id: a17c3a0b-4984-43c1-97cd-35cc5754f4d8] with host: DGGGORW-ISB25540.snowflakecomputing.com, account: DGGGORW-ISB25540, accessUrl: https://DGGGORW-ISB25540.snowflakecomputing.com, user: KYRIE, role: DEV_DCM_EXPERIMENT_APP, database: DEV_EXPERIMENT_APP, schema: DATA, warehouse: DEV_WH_XS, proxy was not configured, password is provided, region: undefined, authenticator: SNOWFLAKE, ocsp mode: INSECURE, os: win32, os version: 10.0.26200"}
+{"level":"INFO","message":"[1:51:03.497 PM]: Connection[id: a17c3a0b-4984-43c1-97cd-35cc5754f4d8] additional details: passcode in password is provided, passcode is not provided, private key is not provided, application: undefined, client name: snowflake-sdk, client version: 3.4.0, retry timeout: 300, private key path: undefined, private key pass is not provided, client store temporary credential: false, browser response timeout: 120000"}
+{"level":"INFO","message":"[1:51:03.498 PM]: Connection[id: a17c3a0b-4984-43c1-97cd-35cc5754f4d8] - connection object created successfully."}
+{"level":"INFO","message":"[1:51:03.505 PM]: Connection[id: a17c3a0b-4984-43c1-97cd-35cc5754f4d8] - async connecting. Associated Snowflake domain: GLOBAL"}
+{"level":"INFO","message":"[1:51:03.506 PM]: Trying to initialize Easy Logging"}
+{"level":"INFO","message":"[1:51:03.516 PM]: No client config detected."}
+{"level":"INFO","message":"[1:51:03.517 PM]: No config file path found. Client config will not be used."}
+{"level":"INFO","message":"[1:51:03.517 PM]: Easy Logging is disabled as no config has been found"}
+{"level":"INFO","message":"[1:51:03.518 PM]: Connection[id: a17c3a0b-4984-43c1-97cd-35cc5754f4d8] - authentication successful using: SNOWFLAKE"}
+{"level":"INFO","message":"[1:51:06.214 PM]: Connection[id: a17c3a0b-4984-43c1-97cd-35cc5754f4d8] - connection established successfully after 2709.42 milliseconds"}
