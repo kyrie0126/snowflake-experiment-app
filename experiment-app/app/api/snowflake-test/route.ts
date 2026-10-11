@@ -1,10 +1,21 @@
 import { NextResponse } from "next/server";
 import { querySnowflake} from "@/lib/snowflake";
+import { Site } from "@/lib/data/definitions";
 
 export async function GET() {
-
+    
     try {
-        const result = await querySnowflake("select current_user() as user_name, current_database() as database_name");
+        const result = await querySnowflake<Site[]>(
+            `select
+                source_schema,
+                site_id,
+                site_name,
+                address_street,
+                address_city,
+                address_state,
+                address_zip
+            from sites`
+        );
 
         return NextResponse.json(result);
     } catch (error) {
