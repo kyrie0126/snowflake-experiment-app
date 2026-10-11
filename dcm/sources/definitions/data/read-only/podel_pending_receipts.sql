@@ -4,7 +4,7 @@ define dynamic table {{ data.namespace }}.podel_pending_receipts
 as
 
 select
-    source_schema
+    source_schema,
     po_identifier,
     po_id,
     line,
