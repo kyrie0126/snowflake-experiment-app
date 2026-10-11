@@ -1,18 +1,27 @@
-import { NextResponse } from "next/server";
+import "server-only";
 import { querySnowflake} from "@/lib/snowflake";
+import {
+    SiteName
+} from "@/lib/data/definitions";
 
-export async function getCurrentUser() {
 
+/**
+ * Gets sites for sidebar header navigation options
+ * @returns A promise that resolves to an array of site_name, side_id, and source_schema
+ */
+export async function getSites() {
     try {
-        const result = await querySnowflake("select current_user() as user_name, current_database() as database_name");
-
-        return NextResponse.json(result);
-    } catch (error) {
-        console.error(error);
-
-        return NextResponse.json(
-            { error: String(error) },
-            { status: 500 }
+        const data = await querySnowflake<SiteName[]>(
+            `select
+                source_schema as "source_schema",
+                site_id as "site_id",
+                site_name as "site_name"
+            from sites`
         );
+
+        return data;
+    } catch (error) {
+        console.error(`Database Error:`, error);
+        throw new Error(`Failed to retrieve site names.`);
     }
 }

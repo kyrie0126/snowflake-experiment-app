@@ -31,22 +31,23 @@ async function connectSnowflake(): Promise<void> {
 }
 
 
-export async function querySnowflake(
+export async function querySnowflake<T>(
     sqlText: string,
-): Promise<Record<string, any>[]> {
-
+    binds?: snowflake.Bind[]
+): Promise<T> {
     await connectSnowflake()
 
     return new Promise((resolve, reject) => {
         connection.execute({
             sqlText,
+            binds,
             complete: (err, stat, rows) => {
                 if (err) {
                     reject(err)
                     return
                 }
 
-                resolve((rows ?? []) as Record<string, any>[])
+                resolve((rows ?? []) as T)
             },
         })
     })
