@@ -31,4 +31,5 @@ jobs:
           target: TEST
           project-path: dcm/
           snowflake-user: ${{ env.SNOWFLAKE_USER }}
+          allow-drops: "true"
           comment-on-pr: "true"
