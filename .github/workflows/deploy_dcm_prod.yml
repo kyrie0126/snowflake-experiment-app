@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "sources/definitions/**"
+      - "dcm/sources/definitions/**"
 
 permissions:
   id-token: write
@@ -23,12 +23,13 @@ jobs:
       - uses: snowflakedb/snowflake-actions/dcm/plan@v3
         with:
           target: PROD
-          project-path: ./
+          project-path: dcm/
           snowflake-user: ${{ env.SNOWFLAKE_USER }}
 
       - uses: snowflakedb/snowflake-actions/dcm/deploy@v3
         with:
           target: PROD
-          project-path: ./
+          project-path: dcm/
           snowflake-user: ${{ env.SNOWFLAKE_USER }}
+          allow-drops: "true"
           comment-on-pr: "true"

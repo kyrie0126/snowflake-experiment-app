@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [test]
     paths:
-      - "sources/definitions/**"
+      - "dcm/sources/definitions/**"
 
 permissions:
   id-token: write
@@ -23,6 +23,6 @@ jobs:
       - uses: snowflakedb/snowflake-actions/dcm/plan@v3
         with:
           target: TEST
-          project-path: ./
+          project-path: dcm/
           snowflake-user: ${{ env.SNOWFLAKE_USER }}
           comment-on-pr: "true"
