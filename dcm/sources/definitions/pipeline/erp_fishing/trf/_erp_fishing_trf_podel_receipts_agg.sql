@@ -1,5 +1,5 @@
 define view {{ pipeline.namespace }}._erp_fishing_trf_podel_receipts_agg
-    comment = 'Pre aggregation of receipts for each PO delivery'
+    comment = 'Pre aggregation of receipts at PO delivery grain'
 as
 
 select
