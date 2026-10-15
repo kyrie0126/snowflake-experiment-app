@@ -23,12 +23,12 @@ jobs:
       - uses: snowflakedb/snowflake-actions/dcm/plan@v3
         with:
           target: PROD
-          project-path: ./
+          project-path: .dcm/
           snowflake-user: ${{ env.SNOWFLAKE_USER }}
 
       - uses: snowflakedb/snowflake-actions/dcm/deploy@v3
         with:
           target: PROD
-          project-path: ./
+          project-path: .dcm/
           snowflake-user: ${{ env.SNOWFLAKE_USER }}
           comment-on-pr: "true"
